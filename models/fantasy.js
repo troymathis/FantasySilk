@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
-const uniqueValidator = require('mongoose-unique-validator');
+const uniqueValidator = require('mongoose-unique-validator')
 // user selects which position they would like to create
 const playerSchema = new mongoose.Schema({
     Name: {type: String, required: true},
