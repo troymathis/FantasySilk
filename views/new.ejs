@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New PLayer!</title>
+</head>
+<body>
+    <h1>Add Your Fantasy Football PLayer!</h1>
+    <form action="/createplayer" method="POST">
+        Name: <input type="text" name="Name"/><br />
+        Fantasy Point Average Per Game: <input type="float" name="fantasyPointsPerGame"/><br /><br />
+        Position: <input type="radio" name="Position" value="QB">QB<br />
+        <input type="radio" name="Position" value="RB">RB<br />
+        <input type="radio" name="Position" value="WR">WR<br />
+        <input type="radio" name="Position" value="TE">TE<br />
+        <input type="radio" name="Position" value="D/ST">D/ST<br />
+        <input type="radio" name="Position" value="K">K<br />
+        IF A PLAYER DOESN'T TRACK A STATISTIC, DON'T INPUT!<br />
+        Passing Yards Per Game: <input type="float" name="PYPG"/><br />
+        Rushing Yards Per Game: <input type="float" name="RYPG"/><br />
+        Rushing TDS Per Game: <input type="float" name="RTDSPG"/><br />
+        Passing TDS Per Game: <input type="float" name="PTDSPG"/><br />
+        Fumbles Per Game: <input type="float" name="FPG"/><br />
+        Interceptions Per Game: <input type="float" name="INTPG"/><br />
+        Field Goals Per Game: <input type="float" name="FGPG"/><br />
+        Image(Headshot): <input type="text" name="IMG"/><br />
+        <input type="submit" value="Create PLayer!"/>
+    </form>
+</body>
+</html>

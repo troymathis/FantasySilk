@@ -10,10 +10,18 @@
     <h1>Fantasy SiLk</h1>
     <nav>
         <a href="/create">Create a PLayer</a>
-        <a>Favorite Team</a>
     </nav>
+    <h2>Player Database</h2>
     <ul>
-        
+        <% players.forEach(player => { %>
+            <table>
+            <tr>
+                <td> <a href="/player/<%=player._id%>"><%= player.Name %></a></td>
+            <td> <%= player.Position %></td>
+            </tr>
+            </table>
+            <% }) %>
     </ul>
+    <a href="/team">Create a Team</a>
 </body>
 </html>

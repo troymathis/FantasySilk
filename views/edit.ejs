@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Player</title>
+</head>
+<body>
+    <h1><%= player.Name %></h1>
+    <form action="/player/<%= player._id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="Name" value='<%= player.Name %>'/><br />
+        Fantasy Point Average Per Game: <input type="float" name="fantasyPointsPerGame" value='<%= player.fantasyPointsPerGame %>'/><br /><br />
+        Position: <input type="radio" name="Position" value="QB">QB<br />
+        <input type="radio" name="Position" value="RB">RB<br />
+        <input type="radio" name="Position" value="WR">WR<br />
+        <input type="radio" name="Position" value="TE">TE<br />
+        <input type="radio" name="Position" value="D/ST">D/ST<br />
+        <input type="radio" name="Position" value="K">K<br />
+        IF A PLAYER DOESN'T TRACK A STATISTIC, DON'T INPUT!<br />
+        Passing Yards Per Game: <input type="float" name="PYPG" value='<%= player.PYPG %>'/><br />
+        Rushing Yards Per Game: <input type="float" name="RYPG" value='<%= player.RYPG %>'/><br />
+        Rushing TDS Per Game: <input type="float" name="RTDSPG" value='<%= player.RTDSPG %>'/><br />
+        Passing TDS Per Game: <input type="float" name="PTDSPG" value='<%= player.PTDSPG %>'/><br />
+        Fumbles Per Game: <input type="float" name="FPG" value='<%= player.FPG %>'/><br />
+        Interceptions Per Game: <input type="float" name="INTPG" value='<%= player.INTPG %>'/><br />
+        Field Goals Per Game: <input type="float" name="FGPG" value='<%= player.FGPG %>'/><br />
+        Image(Headshot): <input type="text" name="IMG" value='<%= player.IMG %>'/><br />
+        <input type="submit" value="Submit Changes!"/>
+    </form>
+</body>
+</html>

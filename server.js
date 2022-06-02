@@ -6,7 +6,6 @@ const methodOverride = require('method-override');
 const fantasyController = require('./controllers/fantasyServer');
 
 mongoose.connect(process.env.DATABASE_URL)
-app.use('/', fantasyController);
 
 const db = mongoose.connection
 db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
@@ -16,6 +15,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
+app.use(fantasyController);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
