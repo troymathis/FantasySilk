@@ -1,11 +1,15 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
 body {
     color: white;
-    background-image: linear-gradient(to right, #122d4a, #3d8ce0);
+    background-image: linear-gradient(to right, #122d4a, rgba(255,0,0,0)), url('https://thumbs.gfycat.com/BoilingLavishAmazonparrot-size_restricted.gif');
+    background-repeat: no-repeat;
+    background-size: cover ;
     display: inline-block;
     font-family: 'Bebas Neue', cursive;
 }
-
-
 
 #header {
     display:flex;
