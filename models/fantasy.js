@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require("bcrypt");
-const uniqueValidator = require('mongoose-unique-validator');
 const player = require('./player');
 const Float = require('mongoose-float').loadType(mongoose);
 // const fantasy = require('../models/fantasy');
@@ -28,19 +26,20 @@ const playerSchema = new mongoose.Schema({
 
 
 const teamSchema = new mongoose.Schema({
+    Name: {type: String,required: true},
     Scoring: {type: String, required: true, enum: ['HPPR', 'FPPR', 'Standard']},
-    QB: [playerSchema],
-    QB2: [playerSchema],
-    RB: [playerSchema],
-    RB2: [playerSchema],
-    WR: [playerSchema],
-    WR2: [playerSchema],
-    Flex: [playerSchema],
-    Flex2: [playerSchema],
-    TE: [playerSchema],
-    "D/ST": [playerSchema],
+    QB: {type: String},
+    QB2: {type: String},
+    RB: {type: String},
+    RB2: {type: String},
+    WR: {type: String},
+    WR2: {type: String},
+    Flex: {type: String},
+    Flex2: {type: String},
+    TE: {type: String},
+    "D/ST": {type: String},
     //possibly kickers?
-    K: [playerSchema],
+    K: {type: String},
 })
 
 // const userSchema = new mongoose.Schema({

@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FantasySiLk</title>
-</head>
-<body>
-    <h1>Fantasy SiLk</h1>
-    <nav>
-        <a href="/create">Create a PLayer</a>
-    </nav>
-    <h2>Player Database</h2>
-    <ul>
-        <% players.forEach(player => { %>
-            <table>
-            <tr>
-                <td> <a href="/player/<%=player._id%>"><%= player.Name %></a></td>
-            <td> <%= player.Position %></td>
-            </tr>
-            </table>
-            <% }) %>
-    </ul>
-    <a href="/team">Create a Team</a>
-</body>
+    <link rel="stylesheet" href="/homestyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Whisper&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="first">Fantasy</h1>
+      <h1 id="second">SiLk</h1>
+    </div>
+    <div id="nav">
+      <a href="/create">Create a PLayer</a>
+      <a href="/createteam">Create a Team</a>
+    </div>
+    <div id="main">
+      <span id="players">
+        <h2>Player Database</h2>
+        <table>
+          <% players.forEach(player => { %>
+          <tr>
+            <td>
+              <a href="/player/<%=player._id%>"
+                ><img src="<%= player.IMG %>" width="50" /><%= player.Name %></a
+              >
+            </td>
+            <td><%= player.Position %></td>
+            <td>
+              <form
+                action="/player/<%= player._id %>?_method=DELETE"
+                method="POST"
+              >
+                <a href="/"><input type="submit" value="Delete" /></a>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </span>
+      <span id="team">
+        <h2>Team Showcase!</h2>
+        <ul>
+          <% teams.forEach(team => { %>
+          <a href="/team/<%= team._id %>"><%= team.Name %></a>
+          <% }) %>
+        </ul>
+      </span>
+    </div>
+  </body>
 </html>

@@ -8,14 +8,18 @@
 </head>
 <body>
     <form action="/createteam" method="POST">
-    <h1>Pick a Scoring Format</h1>
-    <input type="radio" name="Scoring" value="HPPR"> Half Point Per Reception<br />
-    <input type="radio" name="Scoring" value="FPPR"> Full Point Per Reception<br />
-    <input type="radio" name="Scoring" value="Standard"> Standard<br />
-    <h1> Add Players to Your Team</h1>
+<h2>Name Your Legacy!</h2>
+        <input type="text" name="Name"/>
+    <h2>Pick a Scoring Format</h1>
+    <input type="radio" name="Scoring" value="HPPR"/> Half Point Per Reception<br />
+    <input type="radio" name="Scoring" value="FPPR"/> Full Point Per Reception<br />
+    <input type="radio" name="Scoring" value="Standard"/> Standard<br />
+    <h2> Add Players to Your Team</h1>
+    <p>Don't add more than one player in the same position</p>
             <% players.forEach(player => { %>
-                <input type="checkbox" name="<%= player.Position %>" value="<%= player %>"><%= player.Name %>  <%= player.Position %><br />
+                <input type="checkbox" name="<%= player.Position %>" value=<%= player._id %>><%= player.Name %>  <%= player.Position %><br />
                 <% }) %>
+    <input type="submit" value="Franchise!"/>
         </form>
         </body>
 </html>

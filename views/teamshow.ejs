@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Show!</title>
+  </head>
+  <body>
+    <h2><%= team.Name %></h2>
+    <h3>Scoring Format: <%= team.Scoring %></h3>
+    <h3>Players:</h3>
+    <ul>
+      <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.QB) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.QB2) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.RB) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.RB2) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.WR) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.WR2) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.TE) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.Flex) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.Flex2) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team['D/ST']) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
+      if(players[i]._id.toString()== team.K) { %>
+      <li><%= players[i].Name %> <%= players[i].Position %></li>
+      <% } %> <% } %>
+    </ul>
+  </body>
+</html>
