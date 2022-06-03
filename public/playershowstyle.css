@@ -15,39 +15,29 @@ body {
     font-family: 'Whisper', cursive;
     size: 600;
 }
-#nav {
+
+nav {
     display: flex;
     justify-content: space-between;
     border:3px solid rgba(180, 173, 204, 0.3);
     min-width: 700px;
-    padding: 5px;
-    
+}
+#name {
+    font-size: xxx-large;
+}
+#stats {
+    display:inline-block;
 }
 
-#main {
-    display: flex;
-    justify-content: space-between;
+#position {
+    font-size: xxx-large;
 }
-
-#team {
-    margin-left: 20px;
-}
-table {
-    border: 1px solid white ;
-    border-radius: 20px;
-    background-color: rgba(180, 173, 204, 0.3);
-}
-
 a {
     text-decoration: none;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-img {
-    max-width: 40px;
 }
 a:hover {
     opacity: 30%;

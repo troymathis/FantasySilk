@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= player.Name %></title>
-</head>
-<body>
-    <h1><%= player.Name %></h1>
-    <img src="<%= player.IMG %>"/>
-    <h3><%= player.Position %></h3>
-    <h3>Fantasy Points Per Game AVG: <%= player.fantasyPointsPerGame %></h3>
-    <a href="/player/edit/<%= player._id %>">Edit</a><br />
-    <a href="/">Back to Main Page</a>
-</body>
+    <link rel="stylesheet" href="/playershowstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Whisper&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header">
+        <h1 id="first">Fantasy</h1>
+        <h1 id="second">SiLk</h1>
+      </div>
+      <h3 id="name"><%= player.Name %></h3>
+      <nav>
+        <a id="edit" href="/player/edit/<%= player._id %>">Edit</a><br />
+        <a id="main" href="/">Back to Main Page</a>
+      </nav>
+    <img src="<%= player.IMG %>" />
+    <div id="stats">
+      <h3 id="position"><%= player.Position %></h3>
+      <h3 id="fppg">
+        Fantasy Points Per Game AVG: <%= player.fantasyPointsPerGame %>
+      </h3>
+      <h3>
+          Passing Yards Per Game: <%= player.PYPG %>
+      </h3>
+      <h3>
+          Rushing Yards Per Game: <%= player.RYPG %>
+      </h3>
+      <h3>
+          Receiving Yards Per Game: <%= player.ReYPG %>
+      </h3>
+      <h3>
+          Passing Touchdowns Per Game: <%= player.PTDSPG %>
+      </h3>
+      <h3>
+          Rushing Touchdowns Per Game: <%= player.RTDSPG %>
+      </h3>
+      <h3>
+          Receiving Touchdowns Per Game: <%= player.ReTDSPG %>
+      </h3>
+      <h3>
+          Interceptions Per Game: <%= player.INTPG %>
+      </h3>
+      <h3>
+          Fumbles Per Game: <%= player.FPG %>
+      </h3>
+      <h3>
+          Field Goals Per Game: <%= player.FGPG %>
+      </h3>
+    </div>
+  </body>
 </html>

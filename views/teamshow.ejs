@@ -5,46 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Show!</title>
+    <link rel="stylesheet" href="/teamshowstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Whisper&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h2><%= team.Name %></h2>
-    <h3>Scoring Format: <%= team.Scoring %></h3>
+    <div id="header">
+        <h1 id="first">Fantasy</h1>
+        <h1 id="second">SiLk</h1>
+      </div>
+      <nav>
+        <a id="edit" href="/team/edit/<%= team._id %>">Edit</a><br />
+        <a id="main" href="/">Back to Main Page</a>
+      </nav>
+    <h1 id="name"><%= team.Name %></h1>
+    <h2>Scoring Format: <%= team.Scoring %></h2>
     <h3>Players:</h3>
     <ul>
+        <% let total = 0 %>
       <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.QB) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.QB2) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.RB) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.RB2) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.WR) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.WR2) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.TE) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.Flex) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.Flex2) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team['D/ST']) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %> <% for(let i=0;i < players.length;i++) { %> <%
       if(players[i]._id.toString()== team.K) { %>
-      <li><%= players[i].Name %> <%= players[i].Position %></li>
+        <% total = total + players[i].fantasyPointsPerGame %>
+      <li><%= players[i].Position %><img src='<%= players[i].IMG %>' width="100" /><%= players[i].Name %> </li>
       <% } %> <% } %>
     </ul>
+    <h3>Total Average Fantasy Points Per Game:</h3>
+    <p><%= total %></p>
   </body>
 </html>

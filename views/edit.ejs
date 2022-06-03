@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit a Player</title>
+    <link rel="stylesheet" href="/editplayer.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Whisper&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1><%= player.Name %></h1>
+    <div id="header">
+        <h1 id="first">Fantasy</h1>
+        <h1 id="second">SiLk</h1>
+      </div>
+    <h2 id="name"><%= player.Name %></h1>
     <form action="/player/<%= player._id %>?_method=PUT" method="POST">
         Name: <input type="text" name="Name" value='<%= player.Name %>'/><br />
         Fantasy Point Average Per Game: <input type="float" name="fantasyPointsPerGame" value='<%= player.fantasyPointsPerGame %>'/><br /><br />
@@ -22,7 +30,7 @@
         <input type="radio" name="Position" value="Flex2">2nd Flex<br />
         <input type="radio" name="Position" value="D/ST">D/ST<br />
         <input type="radio" name="Position" value="K">K<br />
-        IF A PLAYER DOESN'T TRACK A STATISTIC, DON'T INPUT!<br />
+        <h2>IF A PLAYER DOESN'T TRACK A STATISTIC, DON'T INPUT!</h2><br />
         Passing Yards Per Game: <input type="float" name="PYPG" value='<%= player.PYPG %>'/><br />
         Rushing Yards Per Game: <input type="float" name="RYPG" value='<%= player.RYPG %>'/><br />
         Rushing TDS Per Game: <input type="float" name="RTDSPG" value='<%= player.RTDSPG %>'/><br />

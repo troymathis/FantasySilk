@@ -11,6 +11,8 @@ const playerSchema = new mongoose.Schema({
     // HB, QB, some WRs
     RYPG: {type: Float},
     RTDSPG:{type: Float,},
+    ReYPG:{type: Float},
+    ReTDSPG:{type: Float},
     // QB, option players
     PTDSPG: {type: Float},
     //For reciever only, QB and HB

@@ -1,0 +1,21 @@
+body {
+    color: white;
+    background-image: linear-gradient(to right, #122d4a, #3d8ce0);
+    display: flex;
+    font-family: 'Bebas Neue', cursive;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#header {
+    display:flex;
+    align-items: center;
+    font-size: xxx-large;
+}
+#second {
+    font-family: 'Whisper', cursive;
+    size: 600;
+}
+
+input {
+    padding: 5px;
+}

@@ -9,6 +9,7 @@ const playerSeed = require('../models/playerSeed.js');
 // seed
 router.get('/seed', (req,res) => {
     player.deleteMany({}, (error,allPlayers) => {});
+    team.deleteMany({}, (error,allTeams) => {});
     player.create(playerSeed, (error,data) => {
         res.redirect('/');
     });
@@ -84,6 +85,17 @@ router.get('/player/edit/:id', (req,res) => {
         });
     });
 });
+
+router.get('/team/edit/:id', (req,res) => {
+    team.findById(req.params.id, (err,foundTeam) => {
+        player.find({}, (error, allPlayers) => {
+            res.render('teamedit.ejs', {
+                players: allPlayers,
+                team: foundTeam,
+            });
+        })
+    })
+})
 
 // show
 router.get('/player/:id', (req,res) => {

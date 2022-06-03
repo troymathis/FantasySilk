@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Team!</title>
-    <link rel="stylesheet" href="/createteam.css">
+    <title>Edit <%= team.Name %></title>
+    <link rel="stylesheet" href="/teameditstyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Whisper&display=swap" rel="stylesheet">
@@ -15,19 +15,31 @@
         <h1 id="first">Fantasy</h1>
         <h1 id="second">SiLk</h1>
       </div>
-    <form action="/createteam" method="POST">
+    <form action="/team/<%= team._id %>?_method=PUT" method="POST">
 <h2>Name Your Legacy!</h2>
-        <input type="text" name="Name"/>
+        <input type="text" name="Name" value="<%=team.Name%>"/>
     <h2>Pick a Scoring Format</h1>
-    <input type="radio" name="Scoring" value="HPPR"/> Half Point Per Reception<br />
-    <input type="radio" name="Scoring" value="FPPR"/> Full Point Per Reception<br />
-    <input type="radio" name="Scoring" value="Standard"/> Standard<br />
+    <input type="radio" name="Scoring" value="HPPR"
+    <% if(team.Scoring == 'HPPR') {%>
+        checked='checked'
+    <% } %>
+    /> Half Point Per Reception<br />
+    <input type="radio" name="Scoring" value="FPPR"
+    <% if(team.Scoring == 'FPPR') {%>
+        checked='checked'
+    <% } %>
+    /> Full Point Per Reception<br />
+    <input type="radio" name="Scoring" value="Standard"
+    <% if(team.Scoring == 'Standard') {%>
+        checked='checked'
+    <% } %>
+    /> Standard<br />
     <h2> Add Players to Your Team</h1>
-    <p>Don't add more than one player in the same position</p>
+    <p>Don't add more than one player in the same position, Repopulate players you wish to keep!</p>
             <% players.forEach(player => { %>
                 <input type="checkbox" name="<%= player.Position %>" value=<%= player._id %>><%= player.Name %>  <%= player.Position %><br />
                 <% }) %>
     <input type="submit" value="Franchise!"/>
         </form>
-        </body>
+</body>
 </html>
