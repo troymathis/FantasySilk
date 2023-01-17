@@ -21,7 +21,7 @@ router.get('/', (req,res) => {
         team.find({}, (error, allTeams) => {
             res.render('home.ejs', {
                 players: allPlayers,
-                teams: allTeams,
+                teams: allTeams
             });
         })
     })
